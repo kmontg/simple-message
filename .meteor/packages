@@ -22,3 +22,6 @@ react-meteor-data@0.2.11-beta.1
 accounts-ui
 accounts-password
 dispatch:mocha-browser
+dburles:factory
+johanbrook:publication-collector
+xolvio:cleaner

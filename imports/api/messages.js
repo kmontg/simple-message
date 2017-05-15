@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Mongo } from 'meteor/mongo';
+import { Factory } from 'meteor/dburles:factory';
+import faker from 'faker';
 
 export const Messages = new Mongo.Collection('messages');
 
@@ -67,4 +69,9 @@ Meteor.methods({
  
     Messages.update(messageId, { $set: { private: setToPrivate } });
   },
+});
+
+Factory.define('message', Messages, {
+  text: () => faker.lorem.sentence(),
+  createdAt: () => new Date(),
 });

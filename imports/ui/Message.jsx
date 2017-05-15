@@ -16,7 +16,7 @@ export default class Message extends Component {
   }
 
   deleteThisMessage() {
-    // Explicit call to the server
+    // Explicit call to the server (i.e. non-method call)
     Messages.remove(this.props.message._id);
   }
 
@@ -48,7 +48,7 @@ export default class Message extends Component {
         ) : ''}
 
          <span className="text">
-          <strong>{this.props.message.username}</strong>: {this.props.message.text}
+          <strong>{this.props.message.username}</strong>: {this.props.message.text} <em>({this.props.message.createdAt.toLocaleString()})</em>
         </span>
       </li>
     );
@@ -57,5 +57,5 @@ export default class Message extends Component {
  
 Message.propTypes = {
   message: PropTypes.object.isRequired,
-  showPrivateButton: PropTypes.bool.isRequired,
+  showPrivateButton: PropTypes.bool,
 };

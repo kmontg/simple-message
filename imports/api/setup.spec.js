@@ -1,3 +1,4 @@
+// setup jasmine globals
 var createJ$ = require('@sanjo/jasmine-expect').createJ$;
 var createExpectEnv = require('@sanjo/jasmine-expect').createEnv;
 var createSpyEnv = require('@sanjo/jasmine-spy').createEnv;
